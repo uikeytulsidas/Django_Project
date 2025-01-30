@@ -24,7 +24,7 @@ Ensure you have the following installed:
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 Step 3: Install Dependencies****
-pip install -r requirements.txt
+pip install -r requirements.txt 
 
 Step 4: Configure Database
 Update settings.py with your database credentials (PostgreSQL )
@@ -36,7 +36,8 @@ Step 6: Create Superuser
 python manage.py createsuperuser
 
 Step 7: Run the Server
-python manage.py runserver
+python manage.py runserver , create virtual environment in Django_project directory then used  cd myproject after used  run command python manage.py runserver .
+if it is get error then download pip install pillow 
 
 Environment Variables
 Create a .env file and add:
