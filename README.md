@@ -26,7 +26,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 Step 3: Install Dependencies****
 create requirement.txt file in django_project directory not in project file
-# #include this in requirement.txt file
+ include this in requirement.txt file
 Django>=3.2,<4.0
 psycopg2>=2.8
 python-dotenv>=0.15
