@@ -23,8 +23,19 @@ Ensure you have the following installed:
  python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
+
 Step 3: Install Dependencies****
+create requirement.txt file in django_project directory not in project file
+# #include this in requirement.txt file
+Django>=3.2,<4.0
+psycopg2>=2.8
+python-dotenv>=0.15
+requests>=2.25
+djangorestframework>=3.12
+django-cors-headers>=3.7
+
 pip install -r requirements.txt 
+
 
 Step 4: Configure Database
 Update settings.py with your database credentials (PostgreSQL )
