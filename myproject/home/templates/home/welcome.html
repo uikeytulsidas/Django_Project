@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .navbar {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 2rem;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .card h2 {
+            margin-top: 0;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Dashboard</h1>
+        <div>
+            
+            <a href="{% url 'logout' %}">Logout</a>
+            
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="{% url 'welcome' %}">Home</a>
+        <a href="{% url 'employee_form' %}">Employee Form</a>
+        <a href="{% url 'student_form' %}">Add a Student</a>
+        <a href="{% url 'profile' %}">profile</a>
+       
+       
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Welcome to Your Dashboard</h1>
+        <p>Here's a quick overview of your activities and stats:</p>
+
+        <!-- Statistics Section -->
+        <div class="card-grid">
+            <div class="card">
+                <h2>Total Universities</h2>
+                <p>25</p>
+            </div>
+            <div class="card">
+                <h2>Total Employees</h2>
+                <p>500</p>
+            </div>
+            <div class="card">
+                <h2>New Messages</h2>
+                <p>3</p>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="card">
+            <h2>Quick Links</h2>
+            <ul>
+               
+                <li><a href="{% url 'employee_form' %}">Add a New Employee</a></li>
+                <li><a href="{% url 'student_form' %}">Add a Student</a></li>
+
+               
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Dashboard App. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<tbody>
+    {% for university in universities %}
+    <tr>
+        <td>{{ university.university_id }}</td>
+        <td>{{ university.name }}</td>
+        <td>{{ university.code }}</td>
+        <td>{{ university.contact_number }}</td>
+        <td><a href="{% url 'university_detail' university.university_id %}">View Details</a></td>
+    </tr>
+    {% endfor %}
+</tbody>

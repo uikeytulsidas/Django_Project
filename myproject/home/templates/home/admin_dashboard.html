@@ -1,0 +1,6 @@
+{% if user.is_staff %}
+    <h2>Welcome, Admin!</h2>
+    <p>Here is your admin-only data.</p>
+{% else %}
+    <h2>You are not authorized to view this content.</h2>
+{% endif %}

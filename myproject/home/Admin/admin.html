@@ -1,0 +1,56 @@
+{% extends 'admin/base_site.html' %}
+
+{% block title %}Custom Admin Home Page{% endblock %}
+
+{% block content %}
+    <div class="module">
+        <h1>{{ site_header }}</h1>
+        <p>Welcome to the custom admin home page!</p>
+        
+        <h2>Admin Dashboard</h2>
+        <p>{{ extra_info }}</p>
+        
+        <h3>Applications</h3>
+        <ul>
+            {% for app in app_list %}
+                <li>
+                    <a href="{{ app.admin_url }}">{{ app.name }}</a>
+                    {% if app.models %}
+                        <ul>
+                            {% for model in app.models %}
+                                <li><a href="{{ model.admin_url }}">{{ model.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <style>
+        .module {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #343a40;
+        }
+        h2 {
+            color: #6c757d;
+        }
+        ul {
+            list-style-type: none;
+        }
+        ul li {
+            margin: 5px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+{% endblock %}

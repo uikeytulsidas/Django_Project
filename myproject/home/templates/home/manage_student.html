@@ -1,0 +1,21 @@
+<h2>Manage Students</h2>
+<a href="{% url 'add_student' %}">Add Student</a>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Roll Number</th>
+        <th>Actions</th>
+    </tr>
+    {% for student in students %}
+    <tr>
+        <td>{{ student.id }}</td>
+        <td>{{ student.user.username }}</td>
+        <td>{{ student.roll_number }}</td>
+        <td>
+            <a href="{% url 'update_student' student.id %}">Edit</a> |
+            <a href="{% url 'delete_student' student.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
